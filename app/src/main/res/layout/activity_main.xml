@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/taxi"
+    tools:context="com.example.sukrit.riderapp_wedriveyou.Views.Activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UBER"
+            android:textColor="#ffffff"
+            android:textSize="36sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Partner"
+            android:textColor="#ffffff"
+            android:textSize="26sp"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_rider_app"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="LOOKING FOR THE DRIVER APP"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/txt_rider_app">
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="0dp"
+            android:background="@color/btnSignIn"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:text="SIGN IN"/>
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/btnSignIn"
+            android:background="#ffffff"
+            android:layout_marginRight="6dp"
+            android:text="REGISTER"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "823752570449",
+    "firebase_url": "https://wedriveyou-91635.firebaseio.com",
+    "project_id": "wedriveyou-91635",
+    "storage_bucket": "wedriveyou-91635.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823752570449:android:9ed8d583998686ba",
+        "android_client_info": {
+          "package_name": "com.example.sukrit.ridersappwedriveyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823752570449-db3if3on30a6bnncdibtrkjvl37mua34.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sukrit.ridersappwedriveyou",
+            "certificate_hash": "5a4c7908378045b2dffbe13243254b395544cc0f"
+          }
+        },
+        {
+          "client_id": "823752570449-7j5preumf3ks4nqet3nniagbutkn4207.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_wiJEb9J--yPZSQGlaO-WlkIOs9LlWa0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823752570449-7j5preumf3ks4nqet3nniagbutkn4207.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823752570449:android:82a883c63c114e51",
+        "android_client_info": {
+          "package_name": "com.example.sukrit.wedriveyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823752570449-16mk7b55uh8piqj2coilco7d86e6sbm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sukrit.wedriveyou",
+            "certificate_hash": "5a4c7908378045b2dffbe13243254b395544cc0f"
+          }
+        },
+        {
+          "client_id": "823752570449-7j5preumf3ks4nqet3nniagbutkn4207.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_wiJEb9J--yPZSQGlaO-WlkIOs9LlWa0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823752570449-7j5preumf3ks4nqet3nniagbutkn4207.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
