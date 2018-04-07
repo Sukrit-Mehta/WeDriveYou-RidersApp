@@ -121,7 +121,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())
                         {
-                            mDatabaseUsers = mDatabase.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            mDatabaseUsers = mDatabase.child(Common.driver_tb1).child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                             mDatabaseUsers
                                     .setValue(user)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {

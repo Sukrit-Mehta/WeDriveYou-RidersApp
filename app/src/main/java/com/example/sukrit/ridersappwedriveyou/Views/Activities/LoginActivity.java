@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sukrit.ridersappwedriveyou.R;
+import com.example.sukrit.ridersappwedriveyou.Utils.Common;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -34,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mUserDatabase= FirebaseDatabase.getInstance().getReference().child("Users");
+        mUserDatabase= FirebaseDatabase.getInstance().getReference().child(Common.user_rider_tb1);
         mAuth = FirebaseAuth.getInstance();
 
         mUserDatabase.keepSynced(true);
