@@ -8,4 +8,6 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
+<!--    <string name="google_directions_api">AIzaSyDc4mQVawL_Nx9BryhW4cOUrOVUF7Je8Y4</string>-->
+    <string name="google_directions_api">AIzaSyDnMWoL7DaisMdDDs2e8h1_gu8cCG-_CQw</string>
 </resources>
