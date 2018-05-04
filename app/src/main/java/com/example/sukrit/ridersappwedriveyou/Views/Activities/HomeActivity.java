@@ -91,7 +91,7 @@ public class HomeActivity extends AppCompatActivity
     private static int FASTEST_INTERVAL = 3000;
     private static int DISPLACEMENT = 10;
 
-    DatabaseReference mRidersDb;
+    DatabaseReference mRidersDb,mOngoingRidesDb;
     GeoFire geoFire;
 
     Marker mUserMarker;
@@ -113,6 +113,7 @@ public class HomeActivity extends AppCompatActivity
     Double driverLat = 0.0,driverLng = 0.0;
     Double distUserDriver = 0.0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +122,8 @@ public class HomeActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         ifcmService = Common.getFCMService();
+
+        mOngoingRidesDb = FirebaseDatabase.getInstance().getReference().child("OnGoingRides");
 
         imgExpandable = findViewById(R.id.expandableBtn);
         btnRequestPickup = findViewById(R.id.btnRequestPickup);
@@ -132,8 +135,6 @@ public class HomeActivity extends AppCompatActivity
                 mBottomSheetFragment.show(getSupportFragmentManager(), mBottomSheetFragment.getTag());
             }
         });
-
-
 
         Log.d(TAG, "onCreate: drId"+driverId);
         btnRequestPickup.setOnClickListener(new View.OnClickListener() {
@@ -151,6 +152,7 @@ public class HomeActivity extends AppCompatActivity
                     Log.d(TAG, "sendReq: ");
                     sendRequestToDriver(driverId);
                 }
+
             }
         });
 
@@ -263,6 +265,7 @@ public class HomeActivity extends AppCompatActivity
             notif.put("text","Distance:"+distUserDriver+" , Time:"+duration+" , Address:"+address);
             obj.put("to",driverToken);
             obj.put("notification",notif);
+            obj.put("from",FirebaseInstanceId.getInstance().getToken());
             Log.e(TAG,obj.toString());
         } catch (JSONException e) {
             e.printStackTrace();
@@ -291,7 +294,6 @@ public class HomeActivity extends AppCompatActivity
               //  Token token = dataSnapshot.getValue(Token.class); // Get token object from database with key
                 //Log.d(TAG,"TOKEN VALUE IS:"+token.getToken());
                 Log.d(TAG, "onDataChange22: "+dataSnapshot.child(driverId).child("token").getValue());
-                Log.d(TAG, "onDataChange22: "+dataSnapshot.child(driverId).child("token").getValue());
                 // make raw payload
                 Token token = new Token(dataSnapshot.child(driverId).child("token").getValue().toString());
                 String json_lat_lng = new Gson().toJson(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
@@ -301,6 +303,10 @@ public class HomeActivity extends AppCompatActivity
                 driverToken = dataSnapshot.child(driverId).child("token").getValue().toString();
                 Log.d(TAG, "onDataChange: loc: "+mLastLocation.getLatitude()+","+mLastLocation.getLongitude());
                 getDirection(mLastLocation.getLatitude(),mLastLocation.getLongitude());
+                mOngoingRidesDb.child(driverId)
+                               .child("riderId").setValue(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                mOngoingRidesDb.child(driverId).child("rideStarted").setValue(false);
+                mOngoingRidesDb.child(driverId).child("rideConfirmed").setValue(false);
 //                volleyFunction();
 
                 Sender senderContent = new Sender(dataSnapshot.child(driverId).child("token").getValue().toString(),notification);
